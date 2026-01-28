@@ -26,112 +26,83 @@
     a{font-family:'Georgia'; font-size: 12pt; text-decoration: underline;}
     .vspace{margin-bottom: 12px;}
     chinese {font-family:'KaiTi'; font-size: 13pt; margin-bottom:0}
-    chinese_big {font-family:'KaiTi'; font-size: 220%; margin-bottom:0}
+    chinese_big {font-family:'KaiTi'; font-size: 220%; margin-bottom:10px;display: block;}
     html {margin: 0px; min-height: 100%; width: 100%;}
     body {margin: 0px; min-height: 100%; width: 100%;}
     .circular--square { border-radius: 100%; }
     .circle{ border-radius: 80%;}
-    .mltag {
-        background-color: #fcb194; /* Light gray background */
-        color: #000000;             /* Dark gray text */
-        padding: 2px 8px;         /* Small padding */
-        font-family:'Georgia';
-        border-radius: 18px;      /* Rounded corners */
-        font-size: 11pt;        /* Slightly smaller font */
-        margin-left: 5px;         /* Space between tags */
-        margin-top: 2px;         /* Space between tags */
-        display: inline-block;    /* Keeps tags on the same line */
-        }
-    .systag {
-        background-color: #7fe0dd; /* Light gray background */
-        color: #000000;             /* Dark gray text */
-        padding: 2px 8px;         /* Small padding */
-        font-family:'Georgia';
-        border-radius: 18px;      /* Rounded corners */
-        font-size: 11pt;        /* Slightly smaller font */
-        margin-left: 5px;         /* Space between tags */
-        margin-top: 2px;         /* Space between tags */
-        display: inline-block;    /* Keeps tags on the same line */
-        }
+    .job-market-badge {
+      font-family:'Georgia';
+      padding: 10px 20px;
+      border-radius: 50px;      /* Rounded pill shape */
+      display: inline-block;
+      font-weight: 200;
+      font-style: italic;
+      font-size: 14pt;
+      text-align: justify;
+      /* animation: subtle-pulse 2s infinite; */
+    }
+
+    @keyframes subtle-pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.02); }
+      100% { transform: scale(1); }
+    }
 </style>
 
 
 </head>
 
 
-<body style='-webkit-text-size-adjust: 100%; margin-bottom: auto; background-image: linear-gradient(#d177a8,#fcb194, #7fe0dd);'>
+<body style='-webkit-text-size-adjust: 100%; margin-bottom: auto; background-image: linear-gradient(#d48cb4,#f0a777, #2596be);'>
 
-<div style='max-width: 500pt; margin:auto; margin-bottom:auto; border: 1px solid gray; padding:5px 20px; background: white; box-shadow: 1px 1px 10px #22222277;'>
+<div style='max-width: 600pt; margin:auto; margin-bottom:auto; border: 1px solid gray; padding:5px 20px; background: white; box-shadow: 1px 1px 10px #22222277;'>
 
 <h1>Youpeng Zhao </h1>
 <chinese_big><strong>赵有朋</strong></chinese_big>
-<p>
-    <a href=mailto:youpeng.zhao@ucf.edu><img src="./images/email.png" height="30px" style="margin-bottom:-5px"></a>
-    <a href=https://github.com/kennethzhao24><img src="./images/github.png" height="30px" style="margin-bottom:-5px"></a>
-    <a href="https://www.linkedin.com/in/ypzhao24/"><img src="./images/linkedin.png" height="30px" style="margin-bottom:-5px"></a>
-    <a href="https://scholar.google.com/citations?hl=en&user=rZYsysUAAAAJ"><img src="./images/gscholar.png" height="30px" style="margin-bottom:-5px"></a>    
-</p>
-<img style='float:right; height: 145px; margin-left:20%; margin-right:2%; margin-top:-160px; margin-bottom:-80px' class="square" src="images/me_v13.jpeg" />
+<span class="email">
+youpeng.zhao [at] ucf [dot] edu
+</span>
+<img style='float:right; height: 125px; margin-left:20%; margin-right:2%; margin-top:-100px; margin-bottom:-20px' class="square" src="images/me_v13.jpeg" />
 
 <div class='vspace'></div>
 <hr/>
 <h2>Brief Bio</h2>
+
 <p>
-I am a PhD candidate at the University of Central Florida, advised by Prof. Jun Wang. 
-My research interests are machine learning systems (MLSys) and large-scale foundation models. 
-I build efficient, scalable, and reliable systems for emerging AI applications like large language models (LLMs).
-<!-- I am the receipent of <a href='https://mlcommons.org/2025/06/2025-mlc-rising-stars/'>MLSys Rising Stars 2025</a> --></p>
+I am a final-year PhD student at the University of Central Florida, advised by <a href="https://www.cass.eecs.ucf.edu/jun-wang/">Jun Wang</a>. 
+I build efficient, scalable, and reliable machine learning systems (MLSys) for emerging AI applications, such as large language models (LLMs).
+I am one of cohorts for <a href='https://mlcommons.org/2025/06/2025-mlc-rising-stars/'>MLSys Rising Stars 2025</a>.</p>
 
-<hr/>
-<h2>News</h2>
-<p> 
     <ul>
-      <li>09/2025: One paper accepted by NeurIPS 2025 Efficient Reasoning Workshop. <br/>
+      <li>08/2025-02/2026: Student researcher at <a href="https://ai.google/">Google</a>. I worked on on-device optimization for <a href="https://gemini.google.com/">Gemini</a>.<br/>
         <div class='vspace'></div>
-      <li>09/2025: Received a research grant from Lambda. Thanks Lambda! <br/>
+      <li>05/2025-08/2025: Research Intern at <a href="https://www.microsoft.com/en-us/research/">Microsoft Research</a>. I worked on system-driven test-time scaling for reasoning models.<br/>
         <div class='vspace'></div>
-      <li>08/2025: I joined Google as a student researcher. <br/>
+      <li>05/2024-08/2024: Research Intern at <a href="https://www.d-matrix.ai/">d-Matrix</a>. I worked on system optimization for diffusion models.<br/>
         <div class='vspace'></div>
-      <li>06/2025: One paper accepted by ASAP 2025. Congrats Shakya! <br/>
+      <li>03/2021-07/2022: ML Researcher at <a href="https://research.samsung.com/src-b">Samsung Research China</a>. I worked on efficient deep learning for mobile devices.<br/>
         <div class='vspace'></div>
-      <li>05/2025: I joined Microsoft Research as a research intern. <br/>
-        <div class='vspace'></div>
-      <li>03/2025: Selected as a cohort of <a href='https://mlcommons.org/2025/06/2025-mlc-rising-stars/'>MLSys Rising Stars 2025</a>. Thanks MLCommons!<br/>
-  </ul>
+      </ul>
+
 </p>
 
 <hr/>
-<h2>Selected Publications</h2>
-<ul>
-  <li><em>Are We Scaling the Right Thing? A System Perspective on Test-Time Reasoning</em><br />
-    <b>Youpeng Zhao</b>, Jinpeng LV, Di Wu, Jun Wang, Christopher Gooley<br/>
-    NeurIPS 2025 Efficient Reasoning Workshop <a href='https://arxiv.org/pdf/2509.19645'>[Arxiv]</a></a> 
-  <div class='vspace'></div>
-  <li><em>MeRino: Entropy-driven Design for Generative Language Models on IoT Devices</em><br/>
-    <b>Youpeng Zhao</b>, Ming Lin, Huadong Tang, Qiang Wu, Jun Wang<br/>
-    AAAI 2025 <a href='https://arxiv.org/pdf/2403.07921.pdf'>[Arxiv]</a></a> <a href='/images/aaai_poster.pdf'>[Poster]</a> 
-  <div class='vspace'></div>
- <li><em>ALISA: Accelerating Large Language Model Inference via Sparsity-Aware KV Caching</em><br />
-    <b>Youpeng Zhao</b>, Di Wu, Jun Wang<br/>
-    ISCA 2024 <a href='https://arxiv.org/pdf/2403.17312.pdf'>[Arxiv]</a> <a href='/images/mlsys_poster.pdf'>[Poster]</a> <a href='/images/isca_presentation_final.pdf'>[Slides]</a> <a href='https://www.youtube.com/watch?v=fNrOytJp1w0'>[Video]</a>
-  <div class='vspace'></div>
-</ul>
-<hr/>
-
-
-<h2>Professional Services</h2>
+<h2>Links</h2>
 <p> 
     <ul>
-      <li>Conference Reviewer: NeurIPS, ICLR, ICML, AISTATS, AAMAS, ACCV, WACV.<br/>
+      <li><a href='pub.html'>Selected Publications</a>. Full list can be found in my <a href="https://scholar.google.com/citations?hl=en&user=rZYsysUAAAAJ">Google Scholar</a>.<br/>
         <div class='vspace'></div>
-      <li>Journal Reviewer: IEEE TC, ACM TOIT, IEEE TSUSC.<br/>
+      <li><a href="https://www.linkedin.com/in/ypzhao24/">LinkedIn</a>. <br/>
         <div class='vspace'></div>
-      <li>Program Committee: AAAI, MLSys (AE), EuroSys (Shadow PC).<br/>
+      <li><a href="https://github.com/kennethzhao24">GitHub</a>. <br/>
         <div class='vspace'></div>
-
-  </ul>
+      </ul>
 </p>
+
+
 <hr/>
+
 
 <h2>Fun Facts</h2>
 <ul>
