@@ -17,13 +17,13 @@
 
 <style>
     h1 {font-family:'Times'; font-size: 220%; word-spacing: -2%; letter-spacing: -2%; margin-bottom:1.5%}
-    h2 {font-family:'Georgia'; font-size: 14pt; margin:0}
-    li {font-family:'Georgia'; font-size: 12pt; text-align: justify; line-height: 1.3}
+    h2 {font-family:'Georgia'; font-size: 14pt; margin:0; margin-bottom: 15px; margin-top: 20px;}
+    li {font-family:'Georgia'; font-size: 13pt; text-align: justify; line-height: 1.3}
     h3 {font-family:'Times New Roman'; font-size: 12.5pt; word-spacing: 1px; text-align: justify;}
     .email {font-family:'Arvo'; font-size: 120%;}
-    p {font-family:'Georgia'; font-size: 12pt; text-align: justify; line-height: 1.3}
+    p {font-family:'Georgia'; font-size: 13pt; text-align: justify; line-height: 1.3}
     .quote{font-family:'Satisfy'; font-size: 15pt;}
-    a{font-family:'Georgia'; font-size: 12pt; text-decoration: underline;}
+    a{font-family:'Georgia'; font-size: 13pt; text-decoration: underline;}
     .vspace{margin-bottom: 12px;}
     chinese {font-family:'KaiTi'; font-size: 13pt; margin-bottom:0}
     chinese_big {font-family:'KaiTi'; font-size: 220%; margin-bottom:10px;display: block;}
@@ -33,13 +33,16 @@
     .circle{ border-radius: 80%;}
     .job-market-badge {
       font-family:'Georgia';
-      padding: 10px 20px;
+      padding: 12px 20px;
       border-radius: 50px;      /* Rounded pill shape */
-      display: inline-block;
+      display: block;
       font-weight: 200;
       font-style: italic;
       font-size: 14pt;
       text-align: justify;
+      line-height: 1.3;
+      margin: 15px 0 20px 0;
+      background-color: #eff4f4;  /* Light yellow background */
       /* animation: subtle-pulse 2s infinite; */
     }
 
@@ -64,6 +67,48 @@
       border-radius: 4px; /* Optional: adds a slight curve to the 'square' */
     }
 
+    /* Experience table styling for text alignment */
+    .experience-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 15px 0 20px 0;
+      padding: 0;
+      font-family: 'Georgia';
+      font-size: 13pt;
+      line-height: 1.3
+    }
+
+    .experience-table td {
+      border: none;
+      padding: 12px 12px;  /* Increased padding for better spacing */
+      vertical-align: top;
+    }
+
+    .exp-date {
+      white-space: nowrap;
+      font-weight: normal;
+      padding-left: 12px;
+      padding-right: -20px;
+      width: 140px;
+      font-family:'Times';
+      font-size: 14pt;
+      
+    }
+
+    .exp-desc {
+      text-align: justify;
+    }
+
+    /* Better spacing for lists */
+    ul li {
+      margin-bottom: 10px;
+    }
+
+    /* Better paragraph spacing */
+    p {
+      margin-bottom: 15px;
+    }
+
     /* Mobile Tweak: Center everything when the screen is narrow */
     @media (max-width: 600px) {
       .header-container {
@@ -80,7 +125,7 @@
 
 <body style='-webkit-text-size-adjust: 100%; margin-bottom: auto; background-image: linear-gradient(#d48cb4,#f0a777, #2596be);'>
 
-<div style='max-width: 600pt; margin:auto; margin-bottom:auto; border: 1px solid gray; padding:5px 20px; background: white; box-shadow: 1px 1px 10px #22222277;'>
+<div style='max-width: 600pt; margin:auto; margin-bottom:auto; border: 2px solid #ddd; padding:20px 25px; background: white; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border-radius: 8px;'>
 
 <div class="header-container">
   <div class="header-text">
@@ -90,25 +135,37 @@
   </div>
   <img class="profile-pic" src="images/me_v13.jpeg" alt="Youpeng Zhao" />
 </div>
-<hr>
 
+<p class="job-market-badge">I am on the job market for full-time research scientist/engineer positions. Email for CV if interested!</p>
+
+<hr>
 <h2>Brief Bio</h2>
 
 <p>
-I am a final-year PhD student at the University of Central Florida. 
+I am a final-year PhD candidate at the University of Central Florida. 
 I build efficient, scalable, and reliable machine learning systems (MLSys) for large-scale foundation models, such as large language models (LLMs).
-I am one of the cohorts for <a href='https://mlcommons.org/2025/06/2025-mlc-rising-stars/'>MLSys Rising Stars 2025</a>.</p>
+I am one of the cohorts for <a href='https://mlcommons.org/2025/06/2025-mlc-rising-stars/'>ML and System Rising Stars 2025</a>.
+</p>
 
-    <ul>
-      <li>08/2025-02/2026: Student researcher at <a href="https://ai.google/">Google</a>. I worked on on-device optimization for <a href="https://gemini.google.com/">Gemini</a>.<br/>
-        <div class='vspace'></div>
-      <li>05/2025-08/2025: Research Intern at <a href="https://www.microsoft.com/en-us/research/">Microsoft Research</a>. I worked on system-driven test-time scaling for reasoning models.<br/>
-        <div class='vspace'></div>
-      <li>05/2024-08/2024: Research Intern at <a href="https://www.d-matrix.ai/">d-Matrix</a>. I worked on system optimization for diffusion models.<br/>
-        <div class='vspace'></div>
-      <li>03/2021-07/2022: ML Researcher at <a href="https://research.samsung.com/src-b">Samsung Research China</a>. I worked on efficient deep learning for mobile devices.<br/>
-        <div class='vspace'></div>
-      </ul>
+
+<table class="experience-table">
+  <tr>
+    <td class="exp-date"><b>08/2025 - 02/2026</b>:</td>
+    <td class="exp-desc">Student researcher at <a href="https://ai.google/">Google</a>. I worked on post-training optimization for <a href="https://gemini.google.com/">Gemini</a> on-device deployment.</td>
+  </tr>
+  <tr>
+    <td class="exp-date"><b>05/2025 - 08/2025</b>:</td>
+    <td class="exp-desc">Research Intern at <a href="https://www.microsoft.com/en-us/research/">Microsoft Research</a>. I worked on system-driven test-time scaling for reasoning models.</td>
+  </tr>
+  <tr>
+    <td class="exp-date"><b>05/2024 - 08/2024</b>:</td>
+    <td class="exp-desc">Research Intern at <a href="https://www.d-matrix.ai/">d-Matrix</a>. I worked on system optimization for diffusion-based video generation models.</td>
+  </tr>
+  <tr>
+    <td class="exp-date"><b>03/2021 - 07/2022</b>:</td>
+    <td class="exp-desc">ML Researcher at <a href="https://research.samsung.com/src-b">Samsung Research China</a>. I worked on efficient deep learning for Samsung mobile devices.</td>
+  </tr>
+</table>
 
 </p>
 
@@ -128,12 +185,12 @@ I am one of the cohorts for <a href='https://mlcommons.org/2025/06/2025-mlc-risi
 
 <hr/>
 
-
 <h2>Fun Facts</h2>
 <ul>
 <li>I used to play some elecctronic keyboard and won a <a href='/images/pic.jpeg'>national prize</a> in 2008 &#127929
 </li>
-
+<li>I played a bit college Esports (R6 Siege) and was the OG member of <a href="https://www.gatechesports.com/games">GT R6 Team</a> in 2020 ⚔️
+</li>
 <li>My first name is Youpeng (<chinese><b>有朋</b></chinese>), which in Chinese, means having friends from all over the world &#129299
 </li>
   
