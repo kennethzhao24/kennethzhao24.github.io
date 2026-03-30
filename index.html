@@ -80,7 +80,7 @@
 
     .experience-table td {
       border: none;
-      padding: 12px 12px;  /* Increased padding for better spacing */
+      padding: 10px 10px;  /* Increased padding for better spacing */
       vertical-align: top;
     }
 
@@ -98,6 +98,20 @@
     .exp-desc {
       text-align: justify;
     }
+
+    .publication {
+        margin-bottom: 20px; /* Spacing between different papers */
+        }
+    .pub-title {
+        font-size: 13pt;
+        font-style: italic;
+        margin-bottom: 4px; /* EXACT control between Title and Authors */
+        display: block;
+        }
+    .pub-authors {
+        margin-bottom: 2px; /* Spacing between Authors and Venue */
+        display: block;
+        }
 
     /* Better spacing for lists */
     ul li {
@@ -142,37 +156,78 @@
 <h2>Brief Bio</h2>
 
 <p>
-I am a final-year PhD candidate at the University of Central Florida, advised by <a href='https://www.cass.eecs.ucf.edu/jun-wang/'>Jun Wang</a>.
-I build efficient, scalable, and reliable machine learning systems (MLSys) for large-scale foundation models, such as large language models (LLMs).
+I am a final-year PhD candidate at the University of Central Florida, advised by Jun Wang.
+I build efficient, scalable, and fault-tolerant machine learning systems (MLSys) for large-scale foundation models.
 I am one of the cohorts for <a href='https://mlcommons.org/2025/06/2025-mlc-rising-stars/'>ML and System Rising Stars 2025</a>.
 </p>
 
 <table class="experience-table">
   <tr>
     <td class="exp-date"><b>08/2025 - 02/2026</b>:</td>
-    <td class="exp-desc">Student researcher at <a href="https://ai.google/">Google</a>. I worked on post-training optimization for <a href="https://gemini.google.com/">Gemini</a> on-device deployment.</td>
+    <td class="exp-desc">Student researcher at Google. I worked on post-training optimization for Gemini on-device deployment.</td>
   </tr>
   <tr>
     <td class="exp-date"><b>05/2025 - 08/2025</b>:</td>
-    <td class="exp-desc">Research Intern at <a href="https://www.microsoft.com/en-us/research/">Microsoft Research</a>. I worked on system-driven test-time scaling for reasoning models.</td>
+    <td class="exp-desc">Research Intern at Microsoft Research. I worked on system-driven test-time scaling for reasoning models.</td>
   </tr>
   <tr>
     <td class="exp-date"><b>05/2024 - 08/2024</b>:</td>
-    <td class="exp-desc">Research Intern at <a href="https://www.d-matrix.ai/">d-Matrix</a>. I worked on system optimization for diffusion-based video generation models.</td>
-  </tr>
-  <tr>
-    <td class="exp-date"><b>03/2021 - 07/2022</b>:</td>
-    <td class="exp-desc">ML Researcher at <a href="https://research.samsung.com/src-b">Samsung Research China</a>. I worked on efficient deep learning for Samsung mobile devices.</td>
+    <td class="exp-desc">Research Intern at d-Matrix. I worked on system optimization for diffusion-based video generation models.</td>
   </tr>
 </table>
 
 </p>
 
 <hr/>
+
+<h2>Selected Publications</h2>
+<ul class="pub-list">
+  <li>
+    <span class="pub-title">GhostServe: A Lightweight Checkpointing System in the Shadow for Fault-Tolerant LLM Serving</span>
+    <span class="pub-authors">Shakya Jayakody*, <b>Youpeng Zhao*&dagger;</b>, Chinmay Nehate, Jun Wang</span>
+    <span class="pub-venue">
+      MLSys 2026
+    </span>
+    <span class="pub-venue">
+      <a href='images/mlsys_ghostserve.pdf'>[PDF]</a> 
+      <a href='https://github.com/project-ghostserve/26mlsys-AE-GhostServe'>[Code]</a></span>
+    <span class="pub-venue">
+     (*: equal contribution ,&nbsp; &dagger;: project lead)
+    </span>
+  </li>
+
+  <li>
+    <span class="pub-title">MeRino: Entropy-driven Design for Generative Language Models on IoT Devices</span>
+    <span class="pub-authors"><b>Youpeng Zhao</b>, Ming Lin, Huadong Tang, Qiang Wu, Jun Wang</span>
+    <span class="pub-venue">
+      AAAI 2025
+     <a href='https://arxiv.org/pdf/2403.07921.pdf'>[Arxiv]</a>
+    </span>
+  </li>
+
+  <li>
+    <span class="pub-title">ALISE: Accelerating Large Language Model Serving with Speculative Scheduling</span>
+    <span class="pub-authors"><b>Youpeng Zhao</b>, Jun Wang</span>
+    <span class="pub-venue">
+      ICCAD 2024
+      <a href='https://arxiv.org/pdf/2410.23537'>[Arxiv]</a> 
+  </li>
+
+  <li>
+    <span class="pub-title">ALISA: Accelerating Large Language Model Inference via Sparsity-Aware KV Caching</span>
+    <span class="pub-authors"><b>Youpeng Zhao</b>, Di Wu, Jun Wang</span>
+    <span class="pub-venue">
+      ISCA 2024
+      <a href='https://arxiv.org/pdf/2403.17312'>[Arxiv]</a> 
+  </li>
+
+  
+</ul>
+<hr/>
 <h2>Links</h2>
 <p> 
     <ul>
-      <li><a href='pub.html'>Selected Publications</a>. Full list can be found in my <a href="https://scholar.google.com/citations?hl=en&user=rZYsysUAAAAJ">Google Scholar</a>.<br/>
+      <li><a href="https://scholar.google.com/citations?hl=en&user=rZYsysUAAAAJ">Google Scholar</a>.<br/>
         <div class='vspace'></div>
       <li><a href="https://www.linkedin.com/in/ypzhao24/">LinkedIn</a>. <br/>
         <div class='vspace'></div>
@@ -188,9 +243,9 @@ I am one of the cohorts for <a href='https://mlcommons.org/2025/06/2025-mlc-risi
 <ul>
 <li>I used to play some elecctronic keyboard and won a <a href='/images/pic.jpeg'>national prize</a> in 2008 &#127929
 </li>
-<li>I played a bit college Esports (R6 Siege) and was the OG member of <a href="https://www.gatechesports.com/games">GT R6 Team</a> in 2020 ⚔️
+<li>I played a bit college Esports (R6 Siege) and was the founding member of <a href="https://www.gatechesports.com/games">GT R6 Team</a> in 2020 ⚔️
 </li>
-<li>My first name is Youpeng (<chinese><b>有朋</b></chinese>), which in Chinese, means having friends from all over the world &#129299
+<li>My Chinese name is <chinese><b>有朋</b></chinese>, which means having friends from all over the world &#129299
 </li>
   
 <li>My English name is Kenneth, but people usually call me Ken or Kenny &#128526</li>
