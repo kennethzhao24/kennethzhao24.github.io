@@ -95,6 +95,17 @@
       
     }
 
+    .exp-date-1 {
+      white-space: nowrap;
+      font-weight: normal;
+      padding-left: -2px;
+      padding-right: -10px;
+      width: 10px;
+      font-family:'Times';
+      font-size: 14pt;
+      
+    }
+
     .exp-desc {
       text-align: justify;
     }
@@ -154,37 +165,35 @@
 <h2>Brief Bio</h2>
 
 <p>
-I am a final-year PhD candidate at the University of Central Florida.
-My research focuses on building efficient, scalable, and reliable machine learning systems.
+I am a 4th-year PhD candidate at the University of Central Florida, advised by Prof. <a href='https://www.cass.eecs.ucf.edu/jun-wang/'>Jun Wang</a>.
+I received my Master of Science degree from Georgia Tech and my Bachelor of Engineering degree from Wuhan University.
+I have also worked as research intern at <a href='https://www.microsoft.com/en-us/research/'>Microsoft Research</a> 
+and <a href='https://ai.google/'>Google AI Research</a>.
 I am one of the cohorts for <a href='https://mlcommons.org/2025/06/2025-mlc-rising-stars/'>ML and System Rising Stars 2025</a>.
 </p>
-
-<table class="experience-table">
-  <tr>
-    <td class="exp-date"><b>08/2025 - 02/2026</b>:</td>
-    <td class="exp-desc">PhD Student researcher at Google AI Research. I worked on post-training optimization for Gemini models.</td>
-  </tr>
-  <tr>
-    <td class="exp-date"><b>05/2025 - 08/2025</b>:</td>
-    <td class="exp-desc">Research Intern at Microsoft Research. I worked on system-driven inference-time scaling for LLMs.</td>
-  </tr>
-  <tr>
-    <td class="exp-date"><b>05/2024 - 08/2024</b>:</td>
-    <td class="exp-desc">Research Intern at d-Matrix. I worked on system optimization for multi-modal LLMs and diffusion models.</td>
-  </tr>
-</table>
-
+<p>
+My research interests lie in the intersections of machine learning and computer systems (MLSys). 
+I build efficient and resilient machine learning systems for large-scale AI models.
 </p>
+
+<ul>
+<li><b> Efficient AI</b>: <a href='https://arxiv.org/pdf/2403.17312'>ISCA'24</a>, <a href='https://arxiv.org/pdf/2403.07921.pdf'>AAAI'25</a>, <a href='https://arxiv.org/pdf/2510.04428?'>ICLR'26</a>
+</li>
+<li><b> Algorithm-System Co-Design</b>: <a href='https://arxiv.org/pdf/2403.17312'>ISCA'24</a>, <a href='https://dl.acm.org/doi/pdf/10.1145/3676536.3676659'>ICCAD'24</a>
+</li>  
+<li><b> AI Infrastructure</b>: <a href='https://arxiv.org/pdf/2403.17312'>ISCA'24</a>, <a href='https://dl.acm.org/doi/pdf/10.1145/3676536.3676659'>ICCAD'24</a>, <a href='https://arxiv.org/pdf/2605.00831'>MLSys'26</a>
+</li>  
+</ul>
 
 <hr/>
 
-<h2>Selected Publications</h2>
+<h2>Preprint</h2>
 <ul class="pub-list">
   <li>
     <span class="pub-title">TIDE: Efficient and Lossless MoE Diffusion LLM Inference with I/O-aware Expert Offload</span>
     <span class="pub-authors">Zhiben Chen*, <b>Youpeng Zhao*</b>, Yang Sui, Jun Wang, Yuzhang Shang</span>
     <span class="pub-venue">
-      Preprint
+     Preprint
     </span>
     <span class="pub-venue">
       <a href='https://arxiv.org/pdf/2605.20179'>[Arxiv]</a> 
@@ -194,6 +203,13 @@ I am one of the cohorts for <a href='https://mlcommons.org/2025/06/2025-mlc-risi
      (*: equal contribution)
     </span>
   </li>
+  
+</ul>
+<hr/>
+
+
+<h2>Selected Publications</h2>
+<ul class="pub-list">
   <li>
     <span class="pub-title">GhostServe: A Lightweight Checkpointing System in the Shadow for Fault-Tolerant LLM Serving</span>
     <span class="pub-authors">Shakya Jayakody*, <b>Youpeng Zhao*&dagger;</b>, Chinmay Nehate, Jun Wang</span>
@@ -216,15 +232,6 @@ I am one of the cohorts for <a href='https://mlcommons.org/2025/06/2025-mlc-risi
      <a href='https://arxiv.org/pdf/2403.07921.pdf'>[Arxiv]</a>
     </span>
   </li>
-
-  <li>
-    <span class="pub-title">ALISE: Accelerating Large Language Model Serving with Speculative Scheduling</span>
-    <span class="pub-authors"><b>Youpeng Zhao</b>, Jun Wang</span>
-    <span class="pub-venue">
-      ICCAD 2024
-      <a href='https://arxiv.org/pdf/2410.23537'>[Arxiv]</a> 
-  </li>
-
   <li>
     <span class="pub-title">ALISA: Accelerating Large Language Model Inference via Sparsity-Aware KV Caching</span>
     <span class="pub-authors"><b>Youpeng Zhao</b>, Di Wu, Jun Wang</span>
