@@ -5,6 +5,14 @@
 <meta charset='UTF-8'>
 <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"/>
 <link rel="icon" href="/images/VI.jpg" />
+<!-- level (lining) digits 0-9 from Noto Serif; every other character still uses Georgia -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&text=0123456789&display=swap" rel="stylesheet">
+<script>
+  // apply a saved light/dark choice before the page paints
+  try { var t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t); } catch (e) {}
+</script>
 <script>
   // only count visits on the live site, not local previews
   if (location.hostname === 'kennethzhao24.github.io') {
@@ -20,116 +28,77 @@
 </script>
 
 <style>
+    /* Light and dark color themes; dark follows the system unless a click on empty space overrides it */
+    :root {
+      color-scheme: light;
+      --page-bg: linear-gradient(#a689b9, #dd92b7 28%, #f39ca1 46%, #feb086 64%, #c7a4cc 84%, #a0a0d2); /* Vice City sunset: lavender sky, pink, peach horizon, palm shade */
+      --card-bg: white;
+      --card-border: #ddd;
+      --card-shadow: rgba(0,0,0,0.1);
+      --text: black;
+      --rule: gray;
+      --link: #b55370;
+      --link-visited: #2596be;
+      --link-hover: #a3b85c;
+      --award: red;
+      --icon-filter: none;
+      --icon-blend: normal;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        color-scheme: dark;
+        --page-bg: linear-gradient(#1d1538, #40205a 30%, #7a2a64 55%, #a8435f 75%, #2a2456); /* Vice City at night: indigo, violet, neon glow */
+        --card-bg: #1e1e24;
+        --card-border: #34343c;
+        --card-shadow: rgba(0,0,0,0.5);
+        --text: #e8e6e3;
+        --rule: #55555e;
+        --link: #e88aa8;
+        --link-visited: #6cc3e6;
+        --link-hover: #c5d97f;
+        --award: #ff7a7a;
+        --icon-filter: invert(1);
+        --icon-blend: screen;
+      }
+    }
+    :root[data-theme="dark"] {
+      color-scheme: dark;
+      --page-bg: linear-gradient(#1d1538, #40205a 30%, #7a2a64 55%, #a8435f 75%, #2a2456); /* Vice City at night: indigo, violet, neon glow */
+      --card-bg: #1e1e24;
+      --card-border: #34343c;
+      --card-shadow: rgba(0,0,0,0.5);
+      --text: #e8e6e3;
+      --rule: #55555e;
+      --link: #e88aa8;
+      --link-visited: #6cc3e6;
+      --link-hover: #c5d97f;
+      --award: #ff7a7a;
+      --icon-filter: invert(1);
+      --icon-blend: screen;
+    }
+
     h1 {font-family:'Times'; font-size: 220%; word-spacing: -2%; letter-spacing: -2%; margin-bottom:1.5%}
-    h2 {font-family:'Georgia'; font-size: 14pt; margin:0; margin-bottom: 15px; margin-top: 20px;}
-    li {font-family:'Georgia'; font-size: 13pt; text-align: justify; line-height: 1.3}
-    h3 {font-family:'Times New Roman'; font-size: 12.5pt; word-spacing: 1px; text-align: justify;}
-    p {font-family:'Georgia'; font-size: 13pt; text-align: justify; line-height: 1.3;}
-    bp {font-family:'Georgia'; font-size: 13pt; text-align: justify; line-height: 1.3; color: red; font-style: italic;}
-    
-    /* Updated Link Styles to match image_7ff7dd.jpg */
+    h2 {font-family:'Noto Serif', 'Georgia'; font-size: 14pt; margin:0; margin-bottom: 15px; margin-top: 20px;}
+    li {font-family:'Noto Serif', 'Georgia'; font-size: 13pt; text-align: justify; line-height: 1.3}
+    p {font-family:'Noto Serif', 'Georgia'; font-size: 13pt; text-align: justify; line-height: 1.3;}
+    bp {font-family:'Noto Serif', 'Georgia'; font-size: 13pt; text-align: justify; line-height: 1.3; color: var(--award); font-style: italic;}
+
     a {
-      font-family: 'Georgia'; 
-      font-size: 13pt; 
+      font-family: 'Noto Serif', 'Georgia';
+      font-size: 13pt;
       text-decoration: none;
-      color: #b55370; /* Standard Blue */
+      color: var(--link);
     }
     a:visited {
-      color: #2596be; /* Standard Visited Purple */
+      color: var(--link-visited);
     }
     a:hover {
-      color: #a3b85c; /* Optional: Red on hover for interactivity */
+      color: var(--link-hover);
     }
 
-    .vspace{margin-bottom: 12px;}
-    chinese {font-family:'KaiTi'; font-size: 13pt; margin-bottom:0}
-    chinese_big {font-family:'KaiTi'; font-size: 220%; margin-bottom:10px;display: block;}
     html {margin: 0px; min-height: 100%; width: 100%;}
-    body {margin: 0px; min-height: 100%; width: 100%;}
-    .circular--square { border-radius: 100%; }
-    .circle{ border-radius: 80%;}
-    .job-market-badge {
-      font-family:'Georgia';
-      padding: 12px 20px;
-      border-radius: 50px;      /* Rounded pill shape */
-      display: block;
-      font-weight: 200;
-      /* font-style: italic; */
-      font-size: 12.5pt;
-      text-align: justify;
-      line-height: 1.3;
-      margin: 15px 0 20px 0;
-      background-color: #eff4f4;  /* Light yellow background */
-      /* animation: subtle-pulse 2s infinite; */
-    }
-
-    @keyframes subtle-pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.02); }
-      100% { transform: scale(1); }
-    }
-    .header-container {
-      display: flex;
-      justify-content: space-between; /* Pushes text left and image right */
-      align-items: flex-start;
-      flex-wrap: wrap; /* Allows the image to drop below the text if it's too tight */
-      gap: 20px;
-      margin-bottom: 20px;
-    }
-
-    .profile-pic {
-      width: 120px;
-      height: auto;
-      margin-top: 10px; /* Adjust as needed to align with the header text */
-      border-radius: 10px; /* Optional: adds a slight curve to the 'square' */
-    }
-
-    /* Experience table styling for text alignment */
-    .experience-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 15px 0 20px 0;
-      padding: 0;
-      font-family: 'Georgia';
-      font-size: 13pt;
-      line-height: 1.3
-    }
-
-    .experience-table td {
-      border: none;
-      padding: 10px 10px;  /* Increased padding for better spacing */
-      vertical-align: top;
-    }
-
-    .exp-date {
-      white-space: nowrap;
-      font-weight: normal;
-      padding-left: 12px;
-      padding-right: -20px;
-      width: 140px;
-      font-family:'Times';
-      font-size: 14pt;
-      
-    }
-
-    .exp-date-1 {
-      white-space: nowrap;
-      font-weight: normal;
-      padding-left: -2px;
-      padding-right: -10px;
-      width: 10px;
-      font-family:'Times';
-      font-size: 14pt;
-      
-    }
-
-    .exp-desc {
-      text-align: justify;
-    }
-
-    .publication {
-        margin-bottom: 20px; /* Spacing between different papers */
-        }
+    body {margin: 0px; min-height: 100%; width: 100%; color: var(--text);}
+    hr {color: var(--rule);}
     .pub-title {
         font-size: 13pt;
         font-style: italic;
@@ -150,24 +119,15 @@
     p {
       margin-bottom: 15px;
     }
-
-    /* Mobile Tweak: Center everything when the screen is narrow */
-    @media (max-width: 600px) {
-      .header-container {
-        flex-direction: column-reverse; /* Puts image on top, text below */
-        align-items: center;
-        text-align: center;
-      }
-}
 </style>
 
 
 </head>
 
 
-<body style='-webkit-text-size-adjust: 100%; margin-bottom: auto; background-image: linear-gradient(#d48cb4,#f0a777, #2596be);'>
+<body style='-webkit-text-size-adjust: 100%; margin-bottom: auto; background-image: var(--page-bg);'>
 
-<div style='max-width: 600pt; margin:auto; margin-bottom:auto; border: 2px solid #ddd; padding:20px 25px; background: white; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border-radius: 8px;'>
+<div style='max-width: 600pt; margin:auto; margin-bottom:auto; border: 2px solid var(--card-border); padding:20px 25px; background: var(--card-bg); box-shadow: 0 4px 15px var(--card-shadow); border-radius: 8px;'>
 <a href='index.html'>&larr; Home</a>
 <h1>Publications</h1>
 
@@ -308,5 +268,36 @@
 </ul>
 
 </div>
+
+<script>
+  // Click any empty space (the background or blank parts of the card) to switch light/dark.
+  // The page follows the system setting; a choice is saved only while it differs from it.
+  (function () {
+    var root = document.documentElement;
+    var system = matchMedia('(prefers-color-scheme: dark)');
+    var switching = false; // ignore clicks during the crossfade
+    document.addEventListener('click', function (e) {
+      if (switching || e.target.closest('a, button, img, p, li, h1, h2, h3, h4, hr, chinese_big')) return;
+      if (String(window.getSelection())) return;
+      var systemTheme = system.matches ? 'dark' : 'light';
+      var next = (root.getAttribute('data-theme') || systemTheme) === 'dark' ? 'light' : 'dark';
+      function apply() {
+        if (next === systemTheme) {
+          root.removeAttribute('data-theme');
+          try { localStorage.removeItem('theme'); } catch (err) {}
+        } else {
+          root.setAttribute('data-theme', next);
+          try { localStorage.setItem('theme', next); } catch (err) {}
+        }
+      }
+      if (document.startViewTransition && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        switching = true;
+        document.startViewTransition(apply).finished.finally(function () { switching = false; });
+      } else {
+        apply();
+      }
+    });
+  })();
+</script>
 </body>
 </html>

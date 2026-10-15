@@ -5,6 +5,14 @@
 <meta charset='UTF-8'>
 <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"/>
 <link rel="icon" href="/images/VI.jpg" />
+<!-- level (lining) digits 0-9 from Noto Serif; every other character still uses Georgia -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&text=0123456789&display=swap" rel="stylesheet">
+<script>
+  // apply a saved light/dark choice before the page paints
+  try { var t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t); } catch (e) {}
+</script>
 <script>
   // only count visits on the live site, not local previews
   if (location.hostname === 'kennethzhao24.github.io') {
@@ -20,55 +28,79 @@
 </script>
 
 <style>
-    h1 {font-family:'Times'; font-size: 220%; word-spacing: -2%; letter-spacing: -2%; margin-bottom:1.5%}
-    h2 {font-family:'Georgia'; font-size: 14pt; margin:0; margin-bottom: 15px; margin-top: 20px;}
-    h4 {font-family:'Times'; font-size: 14pt; margin:0; margin-bottom: -12px; margin-top: 22px;}
-    li {font-family:'Georgia'; font-size: 13pt; text-align: justify; line-height: 1.3}
-    h3 {font-family:'Times New Roman'; font-size: 12.5pt; word-spacing: 1px; text-align: justify;}
-    p {font-family:'Georgia'; font-size: 13pt; text-align: justify; line-height: 1.3;}
-    bp {font-family:'Georgia'; font-size: 13pt; text-align: justify; line-height: 1.3; color: red; font-style: italic;}
-    
-    /* Updated Link Styles to match image_7ff7dd.jpg */
-    a {
-      font-family: 'Georgia'; 
-      font-size: 13pt; 
-      text-decoration: none;
-      color: #b55370; /* Standard Blue */
+    /* Light and dark color themes; dark follows the system unless a click on empty space overrides it */
+    :root {
+      color-scheme: light;
+      --page-bg: linear-gradient(#a689b9, #dd92b7 28%, #f39ca1 46%, #feb086 64%, #c7a4cc 84%, #a0a0d2); /* Vice City sunset: lavender sky, pink, peach horizon, palm shade */
+      --card-bg: white;
+      --card-border: #ddd;
+      --card-shadow: rgba(0,0,0,0.1);
+      --text: black;
+      --rule: gray;
+      --link: #b55370;
+      --link-visited: #2596be;
+      --link-hover: #a3b85c;
+      --award: red;
+      --icon-filter: none;
+      --icon-blend: normal;
     }
-    a:visited {
-      color: #2596be; /* Standard Visited Purple */
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        color-scheme: dark;
+        --page-bg: linear-gradient(#1d1538, #40205a 30%, #7a2a64 55%, #a8435f 75%, #2a2456); /* Vice City at night: indigo, violet, neon glow */
+        --card-bg: #1e1e24;
+        --card-border: #34343c;
+        --card-shadow: rgba(0,0,0,0.5);
+        --text: #e8e6e3;
+        --rule: #55555e;
+        --link: #e88aa8;
+        --link-visited: #6cc3e6;
+        --link-hover: #c5d97f;
+        --award: #ff7a7a;
+        --icon-filter: invert(1);
+        --icon-blend: screen;
+      }
     }
-    a:hover {
-      color: #a3b85c; /* Optional: Red on hover for interactivity */
+    :root[data-theme="dark"] {
+      color-scheme: dark;
+      --page-bg: linear-gradient(#1d1538, #40205a 30%, #7a2a64 55%, #a8435f 75%, #2a2456); /* Vice City at night: indigo, violet, neon glow */
+      --card-bg: #1e1e24;
+      --card-border: #34343c;
+      --card-shadow: rgba(0,0,0,0.5);
+      --text: #e8e6e3;
+      --rule: #55555e;
+      --link: #e88aa8;
+      --link-visited: #6cc3e6;
+      --link-hover: #c5d97f;
+      --award: #ff7a7a;
+      --icon-filter: invert(1);
+      --icon-blend: screen;
     }
 
-    .vspace{margin-bottom: 12px;}
+    h1 {font-family:'Times'; font-size: 220%; word-spacing: -2%; letter-spacing: -2%; margin-bottom:1.5%}
+    h2 {font-family:'Noto Serif', 'Georgia'; font-size: 14pt; margin:0; margin-bottom: 15px; margin-top: 20px;}
+    li {font-family:'Noto Serif', 'Georgia'; font-size: 13pt; text-align: justify; line-height: 1.3}
+    p {font-family:'Noto Serif', 'Georgia'; font-size: 13pt; text-align: justify; line-height: 1.3;}
+
+    a {
+      font-family: 'Noto Serif', 'Georgia';
+      font-size: 13pt;
+      text-decoration: none;
+      color: var(--link);
+    }
+    a:visited {
+      color: var(--link-visited);
+    }
+    a:hover {
+      color: var(--link-hover);
+    }
+
     chinese {font-family:'KaiTi'; font-size: 13pt; margin-bottom:0}
     chinese_big {font-family:'KaiTi'; font-size: 220%; margin-bottom:10px;display: block;}
     html {margin: 0px; min-height: 100%; width: 100%;}
-    body {margin: 0px; min-height: 100%; width: 100%;}
-    .circular--square { border-radius: 100%; }
-    .circle{ border-radius: 80%;}
-    .job-market-badge {
-      font-family:'Georgia';
-      padding: 12px 20px;
-      border-radius: 50px;      /* Rounded pill shape */
-      display: block;
-      font-weight: 200;
-      /* font-style: italic; */
-      font-size: 12.5pt;
-      text-align: justify;
-      line-height: 1.3;
-      margin: 15px 0 20px 0;
-      background-color: #eff4f4;  /* Light yellow background */
-      /* animation: subtle-pulse 2s infinite; */
-    }
-
-    @keyframes subtle-pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.02); }
-      100% { transform: scale(1); }
-    }
+    body {margin: 0px; min-height: 100%; width: 100%; color: var(--text);}
+    hr {color: var(--rule);}
+    .icon-mono {filter: var(--icon-filter); mix-blend-mode: var(--icon-blend);}
     .header-container {
       display: flex;
       justify-content: space-between; /* Pushes text left and image right */
@@ -84,63 +116,6 @@
       margin-top: 10px; /* Adjust as needed to align with the header text */
       border-radius: 10px; /* Optional: adds a slight curve to the 'square' */
     }
-
-    /* Experience table styling for text alignment */
-    .experience-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 15px 0 20px 0;
-      padding: 0;
-      font-family: 'Georgia';
-      font-size: 13pt;
-      line-height: 1.3
-    }
-
-    .experience-table td {
-      border: none;
-      padding: 10px 10px;  /* Increased padding for better spacing */
-      vertical-align: top;
-    }
-
-    .exp-date {
-      white-space: nowrap;
-      font-weight: normal;
-      padding-left: 12px;
-      padding-right: -20px;
-      width: 140px;
-      font-family:'Times';
-      font-size: 14pt;
-      
-    }
-
-    .exp-date-1 {
-      white-space: nowrap;
-      font-weight: normal;
-      padding-left: -2px;
-      padding-right: -10px;
-      width: 10px;
-      font-family:'Times';
-      font-size: 14pt;
-      
-    }
-
-    .exp-desc {
-      text-align: justify;
-    }
-
-    .publication {
-        margin-bottom: 20px; /* Spacing between different papers */
-        }
-    .pub-title {
-        font-size: 13pt;
-        font-style: italic;
-        margin-bottom: 4px; /* EXACT control between Title and Authors */
-        display: block;
-        }
-    .pub-authors {
-        margin-bottom: 2px; /* Spacing between Authors and Venue */
-        display: block;
-        }
 
     /* Better spacing for lists */
     ul li {
@@ -166,20 +141,20 @@
 </head>
 
 
-<body style='-webkit-text-size-adjust: 100%; margin-bottom: auto; background-image: linear-gradient(#d48cb4,#f0a777, #2596be);'>
+<body style='-webkit-text-size-adjust: 100%; margin-bottom: auto; background-image: var(--page-bg);'>
 
-<div style='max-width: 600pt; margin:auto; margin-bottom:auto; border: 2px solid #ddd; padding:20px 25px; background: white; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border-radius: 8px;'>
+<div style='max-width: 600pt; margin:auto; margin-bottom:auto; border: 2px solid var(--card-border); padding:20px 25px; background: var(--card-bg); box-shadow: 0 4px 15px var(--card-shadow); border-radius: 8px;'>
 
 <div class="header-container">
   <div class="header-text">
     <h1>Youpeng Zhao</h1>
     <chinese_big lang='zh-CN'><strong>赵有朋</strong></chinese_big> 
-    <a href=mailto:youpeng.zhao@ucf.edu><img src="./images/email.png" height="35px" style="margin-bottom:-15px"></a>
-    <a href=https://github.com/kennethzhao24><img src="./images/github.png" height="35px" style="margin-bottom:-15px"></a>
+    <a href=mailto:youpeng.zhao@ucf.edu><img class="icon-mono" src="./images/email.png" height="35px" style="margin-bottom:-15px"></a>
+    <a href=https://github.com/kennethzhao24><img class="icon-mono" src="./images/github.png" height="35px" style="margin-bottom:-15px"></a>
     <a href="https://www.linkedin.com/in/ypzhao24/"><img src="./images/linkedin.png" height="35px" style="margin-bottom:-15px"></a>
-    <a href="https://scholar.google.com/citations?hl=en&user=rZYsysUAAAAJ"><img src="./images/gscholar.png" height="35px" style="margin-bottom:-15px"></a>    
+    <a href="https://scholar.google.com/citations?hl=en&user=rZYsysUAAAAJ"><img src="./images/gscholar.png" height="35px" style="margin-bottom:-15px"></a>
   </div>
-  <img class="profile-pic" src="images/me_v17.jpg" alt="Youpeng Zhao" />
+  <img class="profile-pic" src="images/me.jpg" alt="Youpeng Zhao" />
 </div>
 
 <hr>
@@ -223,81 +198,50 @@ I am the core contributor and maintainer of <a href='https://flx-oss.github.io/'
 See my <a href='pub.html'>full publication list</a> or my <a href='https://scholar.google.com/citations?hl=en&user=rZYsysUAAAAJ'>Google Scholar</a> profile.
 </p>
 
-<!-- <hr/>
-
-<h2>Preprint</h2>
-<ul class="pub-list">
-<li>
-  <span class="pub-title"><a href='https://arxiv.org/pdf/2609.29913'>MILO: Efficient Many-shot In-Context Learning with Block-wise Low-rank Compression</a></span>
-  <span class="pub-authors"><b>Youpeng Zhao</b>, Tian Tan, Liqian Peng, Jun Wang, Alec Go</span>
-  </span>
-</li>
-<li>
-    <span class="pub-title"><a href='https://arxiv.org/pdf/2605.20179'>TIDE: Efficient and Lossless MoE Diffusion LLM Inference with I/O-aware Expert Offload</a></span>
-    <span class="pub-authors">Zhiben Chen*, <b>Youpeng Zhao*</b>, Yang Sui, Jun Wang, Yuzhang Shang</span>
-    <span class="pub-venue">
-      <a href='https://tide-paper.vercel.app/'>[Project]</a> 
-      <a href='https://github.com/ims-kdks/TIDE'>[Code]</a></span>
-    <span class="pub-venue">
-     (*: equal contribution)
-    </span>
-</li>
-</ul>
-<hr/>
-
-
-
-<h2>Selected Publications</h2>
-<ul class="pub-list">
-  <li>
-    <span class="pub-title"> <a href='https://arxiv.org/pdf/2502.13297'>Understanding and Tackling Label Errors in Individual-Level Natural Language Understanding</a></span>
-    <span class="pub-authors"> Yunpeng Xiao, Kyrie Zhou, <b>Youpeng Zhao</b>, Kai Shu</span>
-    <span class="pub-venue">
-      ASONAM 2026 - <bp>Best Paper Award</bp> &#127942
-    </span>
-  </li>
-
-
-  <li>
-    <span class="pub-title"><a href='https://arxiv.org/pdf/2605.00831'>GhostServe: A Lightweight Checkpointing System in the Shadow for Fault-Tolerant LLM Serving</a></span>
-    <span class="pub-authors">Shakya Jayakody*, <b>Youpeng Zhao*&dagger;</b>, Chinmay Nehate, Jun Wang</span>
-    <span class="pub-venue">
-      MLSys 2026
-    </span>
-    <span class="pub-venue">
-     (*: equal contribution ,&nbsp; &dagger;: project lead)
-    </span>
-  </li>
-
-  <li>
-    <span class="pub-title"><a href='https://arxiv.org/pdf/2403.07921.pdf'>MeRino: Entropy-driven Design for Generative Language Models on IoT Devices</a></span>
-    <span class="pub-authors"><b>Youpeng Zhao</b>, Ming Lin, Huadong Tang, Qiang Wu, Jun Wang</span>
-    <span class="pub-venue">
-      AAAI 2025
-    </span>
-  </li>
-  <li>
-    <span class="pub-title"><a href='https://arxiv.org/pdf/2403.17312'>ALISA: Accelerating Large Language Model Inference via Sparsity-Aware KV Caching</a></span>
-    <span class="pub-authors"><b>Youpeng Zhao</b>, Di Wu, Jun Wang</span>
-    <span class="pub-venue">
-      ISCA 2024
-  </li>
-
-  
-</ul> -->
-
 <hr/>
 
 <h2>Fun Facts</h2>
 <ul>
 <li>I used to play some electronic keyboard and won a <a href='/images/pic.jpeg'>national prize</a> in 2008 &#127929;
 </li>
-<li>I played a bit of college esports (R6 Siege) and was the founding member of <a href="https://www.gatechesports.com/games">GT R6 Team</a> in 2020 ⚔️
+<li>I played a bit of college esports (R6 Siege) and co-founded <a href="https://www.gatechesports.com/games">GT R6 Team</a> in 2020 ⚔️
 </li>
 <li>My Chinese name is <chinese lang='zh-CN'><b>有朋</b></chinese>, which means having friends from all over the world &#129299;
 </li>
 <li>My English name is Kenneth, but people usually call me Ken or Kenny &#128526;</li>
 
 </ul>
+</div>
+
+<script>
+  // Click any empty space (the background or blank parts of the card) to switch light/dark.
+  // The page follows the system setting; a choice is saved only while it differs from it.
+  (function () {
+    var root = document.documentElement;
+    var system = matchMedia('(prefers-color-scheme: dark)');
+    var switching = false; // ignore clicks during the crossfade
+    document.addEventListener('click', function (e) {
+      if (switching || e.target.closest('a, button, img, p, li, h1, h2, h3, h4, hr, chinese_big')) return;
+      if (String(window.getSelection())) return;
+      var systemTheme = system.matches ? 'dark' : 'light';
+      var next = (root.getAttribute('data-theme') || systemTheme) === 'dark' ? 'light' : 'dark';
+      function apply() {
+        if (next === systemTheme) {
+          root.removeAttribute('data-theme');
+          try { localStorage.removeItem('theme'); } catch (err) {}
+        } else {
+          root.setAttribute('data-theme', next);
+          try { localStorage.setItem('theme', next); } catch (err) {}
+        }
+      }
+      if (document.startViewTransition && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        switching = true;
+        document.startViewTransition(apply).finished.finally(function () { switching = false; });
+      } else {
+        apply();
+      }
+    });
+  })();
+</script>
 </body>
 </html>
